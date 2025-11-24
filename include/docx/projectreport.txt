@@ -1,0 +1,78 @@
+Project Report: Simple Traffic Violation & Penalty Management
+Date: 25 November 2025
+Author: Navjyot Singh (project adapted for beginner demonstration)
+
+1. Project Overview
+-------------------
+This small C project demonstrates a simple Traffic Violation & Penalty Management system. It is written in a beginner-friendly style (suitable for a 1st-semester B.Tech student) and uses in-memory arrays for core data structures so the code is easy to read and extend.
+
+2. Purpose
+----------
+- To demonstrate basic C programming concepts: structs, arrays, functions, file organization, and simple I/O.
+- To provide a starting template for learning how to build a small console application in C.
+
+3. Main Features
+-----------------
+- Add and list vehicles (in-memory storage).
+- Record violations and list violations (in-memory).
+- Mark violations as paid (updates in-memory state).
+- Basic reports: counts of violations and pending payments.
+- Very small and readable codebase with clear separation of headers and source files.
+
+4. Project Structure
+--------------------
+- `include/` - header files (`vehicle.h`, `violation.h`, `reports.h`, `penalty.h`).
+- `src/` - source files (`main.c`, `vehicle.c`, `voilation.c`, `reports.c`, `penalty.c`). Note: `voilation.c` filename is intentionally left as-is (typo) to avoid breaking references.
+- `README.md` - build/run instructions and notes.
+
+5. Build Instructions
+---------------------
+From the project root run:
+
+```
+gcc -I include -o program src/*.c
+```
+
+This creates an executable named `program` in the project root.
+
+6. Run Instructions
+-------------------
+Run the program:
+
+```
+./program
+```
+
+To automatically exit (quick check):
+
+```
+printf "0\n" | ./program
+```
+
+7. Limitations (Current Minimal Version)
+---------------------------------------
+- Most data is stored only in memory; the application does not persist vehicles or violations between runs.
+- Some modules have simplified logic or stubbed behavior to keep the code small and easy to understand.
+- A few filenames contain typos (for example, `voilation.c`) — these were intentionally left unchanged.
+
+8. Future Improvements (Suggested)
+---------------------------------
+- Add simple file-based persistence (save/load vehicles and violations from text files).
+- Fix file name typos and update includes accordingly.
+- Add input validation and clearer error handling.
+- Add a `Makefile` and small unit tests for key functions.
+- Improve report generation (sort, filter, aggregate amounts by date).
+
+9. Testing and Validation
+-------------------------
+- After building, run basic manual flows: add vehicles, record violations, list violations, mark payments, and run reports.
+- For automated checks, add a few unit tests or small scripts that call the binary with predefined inputs.
+
+10. Notes for Instructor / Maintainer
+------------------------------------
+- The code is intentionally simplistic for pedagogical use. When extending it for production-like usage, introduce proper file locking, input sanitation, and possibly move to a small embedded database or structured text files.
+
+If you want, I can now:
+- Implement file-based persistence for vehicles and violations, or
+- Rename `voilation.c` to `violation.c` and update includes, or
+- Add a `Makefile` and example data files.
